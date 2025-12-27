@@ -1,0 +1,927 @@
+/* 🌿 Geef Slaaj theme kleuren */
+:root {
+  --green-main: #59b362;
+  --green-dark: #3e8647;
+  --yellow-accent: #ffe15d;
+  --black-main: #222;
+  --white-main: #ffffff;
+  --gray-light: #f3f4f6;
+}
+
+/* ===== 🌍 Algemene layout ===== */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* ❌ Pagina zelf niet scrolbaar */
+  margin: 0;
+  background: linear-gradient(
+    160deg,
+    var(--green-main) 0%,
+    var(--gray-light) 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ===== 📦 Hoofdcontainer ===== */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 100%;
+  width: 100%;
+
+  padding: 0; /* 🔥 BELANGRIJK */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ===== top 100 Layout ===== */
+.banner-layout {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  width: 98vw;
+  height: 100%;
+  max-width: 1600px;
+  box-sizing: border-box;
+}
+
+.main-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+
+  /* MAGIC */
+  min-height: calc(100vh - 140px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== 🟢 Zijkantbanners ===== */
+.side-banner {
+  width: 160px;
+  min-width: 160px;
+  background: linear-gradient(180deg, #b7f3b1, #7dc97d);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 10 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #033d03;
+  height: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.left-banner {
+  background: linear-gradient(180deg, #e7d90e, #69b969);
+}
+.right-banner {
+  background: linear-gradient(180deg, #69b969, #e7d90e);
+}
+
+.ad-content {
+  padding: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ad-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.ad-content p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* ===== 🧭 Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding-top: 4px;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  color: var(--white-main);
+}
+
+h4 {
+  font-size: 14px;
+  font-style: italic;
+  margin: 2;
+  color: #9b9b9b75;
+}
+
+header h1 {
+  color: var(--white-main);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+header h1::before {
+  content: '🥬';
+  font-size: 1.6rem;
+}
+
+header h1::after {
+  content: '🥬';
+  font-size: 1.6rem;
+}
+
+/* ===== 🎈 Kleine animatie ===== */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-53%) translateX(3px);
+  }
+}
+
+.dancing-cat {
+  font-size: 3rem;
+  animation: dance 1.5s infinite ease-in-out;
+}
+
+.dancing-slaaj {
+  font-size: 3rem;
+  animation: dance 1.5s infinite step-start;
+}
+
+@keyframes dance {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(0) rotate(10deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+}
+
+.quote-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quote-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  color: var(--black-main);
+}
+
+.quote-author {
+  font-weight: 600;
+  color: #033d03;
+}
+
+/* 🔵 Vraagteken-knop */
+.mystery-btn {
+  bottom: 12px;
+  right: 12px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ffffffdd;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, background 0.2s;
+}
+
+.mystery-btn:hover {
+  transform: scale(1.08);
+  background: #fff;
+}
+
+/* POPUP - wrapper, image en overlay tekst */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-window {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 360px;
+  max-width: 92%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* Optionele title styling */
+.popup-title {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+}
+
+/* image wrapper - position relative zodat overlay absoluut geplaatst kan worden */
+.popup-img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+/* daadwerkelijke afbeelding */
+.popup-img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover; /* zorgt dat de afbeelding netjes full-bleed in de box zit */
+}
+
+/* overlay tekst bovenop de afbeelding */
+.popup-img-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px; /* plaatsing vanaf boven, pas aan indien nodig */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none; /* klikken gaat door naar overlay-wrapper */
+  color: white;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+  padding: 0 12px;
+  line-height: 1.1;
+}
+
+/* close button */
+.close-popup {
+  margin-top: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #3b8d3b;
+  color: white;
+  cursor: pointer;
+}
+
+/* Klikbare foto in banner */
+.clickable-collection-img {
+  width: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Webshop popup */
+.popup-window.shop {
+  width: 400px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.shop-item img {
+  width: 40%;
+  border-radius: 8px;
+}
+
+.shop-item p {
+  text-align: center;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.shop-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* ===== 🏆 Resultaten / Top 100 ===== */
+
+.results {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgb(255, 255, 255);
+  scrollbar-width: thin;
+  scrollbar-color: #7dc97d transparent;
+}
+
+.results::-webkit-scrollbar {
+  width: 8px;
+}
+.results::-webkit-scrollbar-thumb {
+  background-color: #7dc97d;
+  border-radius: 4px;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.result-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--black-main);
+}
+
+.result-artist {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.result-stats {
+  font-size: 0.8rem;
+  color: #333;
+  margin-top: 4px;
+}
+
+.result-actions .btn {
+  padding: 10px 10px;
+  font-size: 0.8rem;
+}
+
+.results-page {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stats-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stats-tabs button {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.stats-tabs button.active {
+  background: #000;
+  color: #fff;
+}
+
+.stats-placeholder {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.results-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  gap: 1.5rem;
+  height: 95%;
+}
+
+.results-column {
+  background: #fff;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.results-top100 {
+  padding: 0 8 8px;
+}
+
+.results-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding-bottom: 0px;
+}
+
+.results-header input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.results-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 1px;
+}
+
+.results-stats {
+  min-width: 300px;
+  max-width: 360px;
+  min-height: 600px;
+  padding: 16px;
+  margin-bottom: 0;
+  overflow-y: auto;
+  border-radius: 20px;
+  background: #e9f3e9e3;
+}
+.statistics h2 {
+  margin-bottom: 10px;
+}
+
+.stat-block {
+  margin-bottom: 24px;
+}
+
+.stat-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.stat-meta {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* ===== 🏆 Resultaten / statistieken ===== */
+.year-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.year-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 24px;
+  align-items: center;
+  gap: 8px;
+}
+
+.year-label {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.year-bar-wrapper {
+  background: #eef2ee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.year-bar {
+  height: 12px;
+  background: linear-gradient(90deg, #59b362, #3e8647);
+  border-radius: 4px;
+}
+
+.year-count {
+  font-size: 0.8rem;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.stats-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.stats-menu button {
+  background: #0e261d;
+  border-radius: 18px;
+  padding: 14px;
+  text-align: left;
+  font-size: 15px;
+  border: none;
+  color: #a7e9c9;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.stats-menu button:hover {
+  background: #e7d90e;
+  color: #3e8647;
+  transform: translateY(-2px);
+}
+
+.stats-back {
+  align-self: flex-start;
+  background: #0e261d;
+  border-radius: 999px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  border: none;
+  color: #a7e9c9;
+  cursor: pointer;
+}
+
+/* ===== stats dashboard ===== */
+.stats-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.stat-tile {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px 14px 18px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 110px;
+}
+
+.stat-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.stat-icon {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.1;
+}
+
+.stat-sub {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+}
+
+.individual-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.individual-rank {
+  width: 28px;
+  flex-shrink: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.individual-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.individual-title {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.individual-artist {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.2;
+}
+
+.individual-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.individual-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.site-header {
+  padding: 16px 24px;
+  margin-bottom: 0px;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-logo {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0px;
+}
+
+/* Talen en landen */
+  .country-row {
+    display: grid;
+    grid-template-columns: 32px 1fr 1fr 24px;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+    
+  .country-bar {
+    background: #eef2ee;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .country-bar div {
+    height: 10px;
+    background: linear-gradient(90deg, #59b362, #3e8647);
+  }
+    
+  .podium {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+    
+  .country-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+    
+  .flag {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .language-podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  /* Basis */
+  .podium-block {
+    width: 90px;
+    border-radius: 14px 14px 8px 8px;
+    text-align: center;
+    padding: 10px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 16 8px 18px rgba(0, 0, 0, 0.18);
+    transition: height 0.3s ease;
+    position: relative;
+  }
+  
+  /* Volgorde podium */
+  .place-1 { order: 2; }
+  .place-2 { order: 1; }
+  .place-3 { order: 3; }
+  
+  /* Kleuren */
+  .place-1 {
+    background: linear-gradient(180deg, #ffd700, #f1c400);
+  }
+  
+  .place-2 {
+    background: linear-gradient(180deg, #e5e5e5, #bdbdbd);
+  }
+  
+  .place-3 {
+    background: linear-gradient(180deg, #cd7f32, #a97142);
+  }
+  
+  .medal {
+    font-size: 1.6rem;
+  }
+  
+  /* vlag exact midden */
+  .podium-block .flag {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .language {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  
+  .count {
+    font-size: 1.2rem;
+    margin-top: 4px;
+  }
+  
+/* ===== Pie chart layout ===== */
+
+.language-chart-sticky {
+  position: sticky;
+  top: 80px;              /* afstand tot bovenkant */
+  align-self: flex-start; /* belangrijk binnen flex */
+  z-index: 2;
+}
+
+/* Wrapper van chart + legenda */
+.pie-chart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Chart zelf */
+.pie-chart {
+  transform: rotate(-90deg);
+  flex-shrink: 0;
+}
+
+/* ===== Legend ===== */
+
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pie-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   📱 MOBILE (≤ 768px)
+   ========================= */
+   @media (max-width: 768px) {
+
+    /* 🔕 Verberg rechterkolom & banners */
+    .results-stats,
+    .statistics,
+    .side-banner {
+      display: none !important;
+    }
+  
+    /* 🧱 Layout → 1 kolom */
+    .results-layout {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  
+    /* 🏆 Top 100 pakt volledige breedte */
+    .results-column {
+      border-radius: 0;
+    }
+
+    .main-card {
+      border-radius: 0;
+      padding: 8px;
+      min-height: calc(100vh - 90px);
+    }
+
+  
+    /* ===== HEADER ===== */
+    .site-header {
+      padding: 10px 14px;
+    }
+  
+    header h1 {
+      font-size: 1.3rem;
+    }
+  
+    .site-logo {
+      width: 36px;
+      height: 28px;
+    }
+  
+    /* ===== RESULT ROWS (belangrijk) ===== */
+    .result-row {
+      gap: 10px;
+      padding: 8px 6px;
+    }
+  
+    /* 🎵 Cover kleiner */
+    .result-cover {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+    }
+  
+    /* 📝 Tekst compacter */
+    .result-meta {
+      gap: 2px;
+    }
+  
+    .result-artist {
+      font-size: 0.8rem;
+    }
+  
+    .result-stats {
+      font-size: 0.7rem;
+      margin-top: 2px;
+    }
+  
+    /* 📜 Scrollruimte onder */
+    .results {
+      padding-bottom: 70px;
+    }
+  }
+
+    
+  
+  
