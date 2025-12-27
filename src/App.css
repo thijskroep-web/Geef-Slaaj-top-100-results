@@ -14,6 +14,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden; /* ❌ Pagina zelf niet scrolbaar */
+  overflow-x: hidden;
   margin: 0;
   background: linear-gradient(
     160deg,
@@ -51,6 +52,7 @@ body {
   height: 100%;
   max-width: 1600px;
   box-sizing: border-box;
+  padding: 0 8px;
 }
 
 .main-card {
