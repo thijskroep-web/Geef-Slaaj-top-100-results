@@ -848,7 +848,7 @@ header h1::after {
 /* =========================
    📱 MOBILE (≤ 768px)
    ========================= */
-   @media (max-width: 600px) {
+   @media (max-width: 768px) {
 
     /* 🔕 Verberg rechterkolom & banners */
     .results-stats,
@@ -872,6 +872,7 @@ header h1::after {
       border-radius: 0;
       padding: 8px;
       min-height: calc(100vh - 90px);
+      max-width: 600px;
     }
 
   
