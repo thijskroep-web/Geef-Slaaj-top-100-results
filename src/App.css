@@ -870,7 +870,7 @@ header h1::after {
 
     .main-card {
       border-radius: 0;
-      padding: 2px;
+      padding: 0px;
       min-height: calc(100vh - 90px);
     
     }
@@ -905,7 +905,7 @@ header h1::after {
   
     /* 📝 Tekst compacter */
     .result-meta {
-      gap: 2px;
+      gap: 0px;
     }
   
     .result-artist {
